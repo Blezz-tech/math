@@ -1,0 +1,97 @@
+\section*{Задание 15.1}
+
+Решите неравенство
+
+$\log_{11}\left(8x^2+7\right) -
+    \log_{11}\left(x^2+x+1\right) \geqslant
+    \log_{11}\left(\frac{x}{x+5}+7\right)$
+
+
+\begin{itemize}
+    \item $8x^2+7>0, x \in R$
+    \item {
+          $x^2+x+1 =
+              x^2 + 2 \cdot 0,5 \cdot x + 0,5^2 + 0,75 =
+              (x + 0,5)^2 + 0,75$
+
+          $(x + 0,5)^2 + 0,75 > 0, x \in R$
+          }
+\end{itemize}
+
+$\log_{11} \frac{8x^2+7}{x^2+x+1} \geqslant
+    \log_{11} \left(\frac{x}{x+5} + 7\right)$
+
+\begin{equation*}
+    \begin{cases}
+        \log_{11} \frac{8x^2+7}{x^2+x+1} \geqslant
+        \log_{11} \left(\frac{x}{x+5} + 7\right), \\
+        \frac{x}{x+5} + 7 > 0.
+    \end{cases}
+\end{equation*}
+
+\begin{enumerate}[{$1$}.$1$]
+    \item $\log_{11} \frac{8x^2+7}{x^2+x+1} \geqslant \log_{11} \left(\frac{x}{x+5} + 7\right)$
+    \item $\frac{8x^2+7}{x^2+x+1} \geqslant \frac{8x+35}{x+5}$
+    \item $\frac{8x^2+7}{x^2+x+1} - \frac{8x+35}{x+5} \geqslant 0$
+    \item $\frac{(8x^2+7)(x+5) - (8x+35)(x^2+x+1)}{(x^2+x+1)(x+5)} \geqslant 0$
+    \item $\frac{8x^3 + 40x^2 + 7x + 35 - 8x^3 - 8x^2 - 8x - 35x^2 - 35x - 35}{(x^2+x+1)(x+5)} \geqslant 0$
+    \item $\frac{8x^3 + 40x^2 + 7x + 35 - 8x^3 - 42x^2 - 42x - 35}{(x^2+x+1)(x+5)} \geqslant 0$
+    \item $\frac{\cancel{8x^3} + 40x^2 + 7x + \bcancel{35} - \cancel{8x^3} - 42x^2 - 42x - \bcancel{35}}{(x^2+x+1)(x+5)} \geqslant 0$
+    \item $\frac{-2x^2-35x}{(x^2+x+1)(x+5)} \geqslant 0$
+    \item $\frac{x(2x+35)}{(x^2+x+1)(x+5)} \leqslant 0$
+\end{enumerate}
+
+\begin{enumerate}[{$2$}.$1$]
+    \item $\frac{x}{x+5} + 7 > 0$
+    \item $\frac{8x+35}{x+5} > 0$
+\end{enumerate}
+
+
+\begin{equation*}
+    \begin{cases}
+        \frac{x(2x+35)}{(x^2+x+1)(x+5)} \leqslant 0, \\
+        \frac{8x+35}{x+5} > 0.
+    \end{cases}
+\end{equation*}
+
+Вставить графики с помощью tikz
+
+$x_1 \in (-\infty; -17,5]\cup[-5;0]$
+
+Вставить графики с помощью tikz
+
+$x_2 \in (-\infty; -17,5]\cup[-5; +\infty]$
+
+
+\begin{tikzpicture}[scale=0.5]
+    \newcommand{\axisStart}{-19}
+    \newcommand{\axisEnd}{2}
+
+    % Ось x
+    \createAxis{\axisStart}{\axisEnd}
+
+
+
+    % Точки нулей
+    \foreach \x in {-17.5, -5, 0} {
+            \ifthanelse{\x < 0}
+            {\draw (\x,0.2) -- (\x,-0.2) node[below] {$\x\hphantom{-}$};}
+            {\draw (\x,0.2) -- (\x,-0.2) node[below] {$\x$};}
+        }
+
+    % Первый интервал
+    \createInterval{\axisStart}{-17.5}{0.75}{white}{black}{white}{white}
+    \createInterval{        -5}{0    }{0.75}{black}{black}{white}{white}
+
+    % Второй интервал
+    \createInterval{\axisStart}{-17.5   }{1.5}{white}{black}{white}{white}
+    \createInterval{        -5}{\axisEnd}{1.5}{black}{white}{white}{white}
+
+
+\end{tikzpicture}
+
+$x_1 \cap x_2 = (-\infty; -17,5]\cup[-5;0]$
+
+Ответ: $(-\infty; -17,5]\cup[-5;0]$
+
+
