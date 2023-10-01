@@ -1,0 +1,48 @@
+
+\begin{tcolorbox}[
+  colback=blue!5!white,
+  colframe=blue!75!black,
+  title=Задание 1.1
+  ]
+
+Треугольник $ABC$ вписан в окружность с центром $O$. Угол $BAC$ равен $32^{\circ}$. Найдите угол $BOC$. Ответ дайте в градусах.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+  colback=white!100!white,
+  colframe=green!75!black,
+  title=Решение 1.1
+  ]
+
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/A,6/0/B,3/4/C}
+    \tkzDrawPolygon(A,B,C)
+
+    \tkzDefTriangleCenter[circum](A,B,C)
+    \tkzGetPoint{O}
+    \tkzDrawCircle(O,A)
+
+    \tkzDrawSegment(B,O)
+    \tkzDrawSegment(O,C)
+
+    \tkzDrawPoints(A,B,C,O)
+    \tkzLabelPoints[left](A)
+    \tkzLabelPoints[right](B)
+    \tkzLabelPoints[above](C)
+    \tkzLabelPoint(O){$O$}
+    
+    \tkzLabelAngle[pos=1.5](B,A,C){$32^\circ$}
+    \tkzMarkAngle[size=1](B,A,C)
+  \end{tikzpicture}
+
+  $\angle ABC = \frac{1}{2} \smile BC$
+
+  $\smile BC = 64^\circ$
+
+  $\angle BOC = \smile BC$
+
+  Ответ: $64^\circ$
+
+\end{tcolorbox}
+
