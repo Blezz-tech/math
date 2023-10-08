@@ -15,26 +15,55 @@
   title=Решение 1.1
   ]
 
-  \begin{tikzpicture}
-    \tkzDefPoints{0/0/A,6/0/B,3/4/C}
-    \tkzDrawPolygon(A,B,C)
+  \begin{center}  
+  \begin{asy}
+    import geometry;
 
-    \tkzDefTriangleCenter[circum](A,B,C)
-    \tkzGetPoint{O}
-    \tkzDrawCircle(O,A)
-
-    \tkzDrawSegment(B,O)
-    \tkzDrawSegment(O,C)
-
-    \tkzDrawPoints(A,B,C,O)
-    \tkzLabelPoints[left](A){$A$}
-    \tkzLabelPoints[right](B){$B$}
-    \tkzLabelPoints[above](C){$C$}
-    \tkzLabelPoint(O){$O$}
+    // Первичные настройки
     
-    \tkzLabelAngle[pos=1.5](B,A,C){$32^\circ$}
-    \tkzMarkAngle[size=1](B,A,C)
-  \end{tikzpicture}
+    defaultpen(fontsize(10pt));
+    size(10cm);
+    
+    // Цвета треугольника
+    
+    var bg_color_triangle=RGB(218, 231, 241);
+    var border_color_triangle=RGB(15, 158, 254);
+    
+    // Цвета угла
+    
+    var bg_color_angle=RGB(153,208,169);
+    var border_color_angle=RGB(15, 158, 254)+0.5;
+    
+    // Функция создания точки
+    
+    void ddot(pair P, pen ccolor, real ssize) {
+      dot(P, ccolor+(ssize)); dot(P, white+(ssize-1));
+    }
+    
+    // Чертёж
+    
+    
+    pair O, A, B, C, M, P;
+    A=(0,0); B=(6,0); C=(5,4);
+    
+    triangle t=triangle(A, B, C);
+    
+    
+    path circ=circumcircle(t);
+    draw(circ);
+    
+    O=circumcenter(t);
+    
+    label("$O$", O, SE);
+    ddot(O, black, 3.5);
+    
+    markangle("$32^\circ$", B, A, C, Fill(bg_color_angle), p=black, radius=0.75cm);
+    
+    draw(t); label(t);
+    
+  \end{asy}
+\end{center}
+\vspace{2mm}
 
   $\angle ABC = \frac{1}{2} \smile BC$
 
