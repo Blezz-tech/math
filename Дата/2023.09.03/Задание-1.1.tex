@@ -5,7 +5,7 @@
   title=Задание 1.1
   ]
 
-Треугольник $ABC$ вписан в окружность с центром $O$. Угол $BAC$ равен $32^{\circ}$. Найдите угол $BOC$. Ответ дайте в градусах.
+  Треугольник $ABC$ вписан в окружность с центром $O$. Угол $BAC$ равен $32^{\circ}$. Найдите угол $BOC$. Ответ дайте в градусах.
 
 \end{tcolorbox}
 
@@ -42,8 +42,7 @@
     
     // Чертёж
     
-    
-    pair O, A, B, C, M, P;
+    pair O, A, B, C;
     A=(0,0); B=(6,0); C=(5,4);
     
     triangle t=triangle(A, B, C);
@@ -60,7 +59,6 @@
     markangle("$32^\circ$", B, A, C, Fill(bg_color_angle), p=black, radius=0.75cm);
     
     draw(t); label(t);
-    
   \end{asy}
 \end{center}
 \vspace{2mm}
