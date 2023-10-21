@@ -46,12 +46,6 @@
 
     A=(0,3); B=(-10,0); C=(0,-3); D=(10,0); O=(0,0);
 
-    draw(A--B); draw(A -- D); draw(C -- D); draw(C -- B);
-    label("$A$", A, N);
-    label("$B$", B, W);
-    label("$C$", C, S);
-    label("$D$", D, E);
-
     markangle("$13^\circ$", D, B, A, Fill(bg_color_triangle), p=black, radius=0.75cm);
 
     markangle("$13^\circ$", C, B, D, Fill(bg_color_triangle), p=black, radius=0.75cm);
@@ -63,6 +57,12 @@
     label("$O$", O, SE);
     draw(B -- D, border_color_triangle+dashed);
     draw(A -- C, border_color_triangle+dashed);
+
+    draw(A--B); draw(A -- D); draw(C -- D); draw(C -- B);
+    label("$A$", A, N);
+    label("$B$", B, W);
+    label("$C$", C, S);
+    label("$D$", D, E);
   \end{asy}
 \end{center}
 \vspace{2mm}
